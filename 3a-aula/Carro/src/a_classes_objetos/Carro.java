@@ -1,19 +1,36 @@
 package a_classes_objetos;
 import javax.swing.*;
 public class Carro {
+
     String marca;
-    Double anoFabricacao;
-
     String cor;
+    int ano;
 
+    boolean cadastrar() {
+        marca = JOptionPane.showInputDialog("Marca:");
+        cor = JOptionPane.showInputDialog("Cor:");
+        ano = Integer.parseInt(JOptionPane.showInputDialog("Ano:"));
+        return validaCadastro();
+    }
 
-    void Cadastro(){
-       marca = JOptionPane.showInputDialog("Informe a marca do carro:");
-       anoFabricacao = Double.parseDouble(JOptionPane.showInputDialog("Informe o ano de fabricação do carro:"));
-       cor = JOptionPane.showInputDialog("Informe a cor do carro:");
+    boolean validaCadastro() {
+        if(marca.equals("")) {
+            JOptionPane.showMessageDialog(null, "Marca é obrigatório");
+            return false;
+        }
+        if(cor.equals("")) {
+            JOptionPane.showMessageDialog(null, "Cor é obrigatório");
+            return false;
+        }
+        if(ano < 1954 || ano > 2023) {
+            JOptionPane.showMessageDialog(null, "Ano inválido");
+            return false;
+        }
+        return true;
     }
-    String exibirDados(){
-        return marca + " - " + cor + " - " + "\n";
+
+    String exibir() {
+        return marca + " - " + cor + " - " + ano + "\n";
     }
+
 }
-
