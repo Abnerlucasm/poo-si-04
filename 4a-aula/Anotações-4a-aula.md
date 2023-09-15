@@ -1,3 +1,12 @@
+
+---
+Tags: poo1/help
+Data: 
+Disciplina: Programação Orientada a Objetos 1
+Professor: Clavisson
+Categoria: anotações
+---
+
 # Atributos
 
 ## Private
